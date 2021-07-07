@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app" >
+  <h2>{{message}}</h2>
+  <img v-bind:src="imgURL" alt="" >
+  <a v-bind:href="aHref">百度一下</a>
+  <!--语法糖-->
+  <!--<img : src="imgURL" alt="">
+  <a href="aHref">百度一下</a>>-->
+</div>
+
+<script src="D:\03_IDE\03_vue\02_code\Vuejs\Day01\learnVuejs01\js\vue.js"></script>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data: {
+      message:'hello',
+      imgURL: 'https://images.pexels.com' +
+              '/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      aHref:'http://www.baidu.com'
+      }
+    })
+</script>
+
+
+</body>
+</html>

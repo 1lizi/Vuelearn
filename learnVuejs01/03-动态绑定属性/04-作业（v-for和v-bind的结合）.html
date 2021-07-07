@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .active{
+    color:green
+  }
+</style>
+<body>
+<div id="app">
+ <!-- 用currentIndex来记录当前的index,再用active决定是否赋予颜色
+  在响应click时，再将index的值传给currentIndex-->
+  <ul>
+    <li v-for="(item,index) in movies"
+        :class="{active: currentIndex === index}"
+        @click="liClick(index)" >
+      {{index}}.{{item}}
+    </li>
+  </ul>
+
+</div>
+<script src="D:\03_IDE\03_vue\02_code\Vuejs\Day01\learnVuejs01\js\vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'hello',
+      movies:['一秒钟','送你一朵小红花','大红包','拆弹专家','流浪地球','悬崖之上'],
+      currentIndex: 0
+     },
+    methods:{
+      liClick(index){
+        this.currentIndex = index
+      }
+    }
+   })
+</script>
+
+</body>
+</html>
